@@ -1,0 +1,156 @@
+<html>
+
+<head>
+  <title>Registration</title>
+
+
+<body background="C:\Users\91701\Downloads\img-4 (1).jpg">
+  <style>
+    .reg {
+      background-color: rgba(229, 236, 237, 0.183);
+      margin: 20%;
+      padding: 3%;
+      margin-left: 35%;
+      margin-right: 35%;
+      margin-top: auto;
+      border-radius: 10px;
+    }
+
+    .navbar {
+      background-color: none;
+      overflow: hidden;
+    }
+
+    .navbar a {
+      float: left;
+      display: block;
+      color: blue;
+      margin-left: 35px;
+      padding: 14px 16px;
+    }
+
+    .navbar a:hover {
+      background-color: wheat;
+      color: palevioletred;
+    }
+  </style>
+
+  <script>
+    function validation() {
+      if (isEmpty(document.getElementById('data_2').value.trim())) {
+        alert('First name is required!');
+        return false;
+      }
+
+      if (isEmpty(document.getElementById('data_3').value.trim())) {
+        alert('Last name is required!');
+        return false;
+      }
+
+      if (isEmpty(document.getElementById('data_4').value.trim())) {
+        alert('Phone is required!');
+        return false;
+      }
+
+      if (isEmpty(document.getElementById('data_5').value.trim())) {
+        alert('Email is required!');
+        return false;
+      }
+
+      if (!validateEmail(document.getElementById('data_5').value.trim())) {
+        alert('Email must be a valid email address!');
+        return false;
+      }
+
+      if (isEmpty(document.getElementById('data_6').value.trim())) {
+        alert('Arrival date is required!');
+        return false;
+      }
+
+      if (isEmpty(document.getElementById('data_7').value.trim())) {
+        alert('Departure date is required!');
+        return false;
+      }
+
+      if (isEmpty(document.getElementById('data_8').value.trim())) {
+        alert('Number of adults is required!');
+        return false;
+      }
+
+      var data_6 = document.getElementById("data_6").value.trim();
+      var data_7 = document.getElementById("data_7").value.trim();
+      if (data_6 > data_7) {
+        alert("Arrival date cannot be after Departure date");
+        return false;
+      }
+
+      return true;
+    }
+    function isEmpty(str) { return (str.length === 0 || !str.trim()); }
+    function validateEmail(email) {
+      var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,15}(?:\.[a-z]{2})?)$/i;
+      return isEmpty(email) || re.test(email);
+    }
+
+
+
+  </script>
+  </head>
+
+  <body>
+
+    <center>
+      <form method="post" action="home.html" onSubmit="return validation();">
+        <div style="max-width: 400px;">
+        </div>
+
+        <div style="padding-bottom: 18px;font-size : 35px;"> <u>Registration</u></div>
+        <div class="navbar">
+          <h2>
+            <a href="home.html">Home</a>
+            <a href="Menu.html">Menu</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="Registration form.html">Registration</a>
+            <a href="about.html">About Us</a>
+            <a href="Service.html">Service</a>
+            <a href="login.html">Login </a>
+          </h2>
+        </div>
+        <div class="reg">
+          <div style="display: flex; padding-bottom: 18px;max-width : 450px;">
+            <div style=" margin-left: 0; margin-right: 5%; width: 60%;">First name<span style="color: red;">
+                *</span><br />
+              <input type="text" id="data_2" name="data_2" style="max-width: 100%;" class="form-control" placeholder="Enter here"/>
+            </div>
+
+            <div style=" margin-left: 1%; margin-right: 0; width: 60%;">Last name<span style="color: red;">
+                *</span><br />
+              <input type="text" id="data_3" name="data_3" style="max-width: 100%;" class="form-control" placeholder="Enter here"/>
+            </div>
+
+          </div>
+
+          <div style="padding-bottom: 18px;">Phone<span style="color: red;"> *</span><br />
+            <input type="text" id="data_4" name="data_4" style="max-width : 450px;" class="form-control" placeholder="Ph.No"/>
+          </div>
+
+          <div style="padding-bottom: 18px;">Email<span style="color: red;"> *</span><br />
+            <input type="text" id="data_5" name="data_5" style="max-width : 450px;" class="form-control"  placeholder="Email here"/>
+          </div>
+          <div style="padding-bottom: 18px;">Password<span style="color: red;"> *</span><br />
+            <input type="text" id="data_5" name="data_5" style="max-width : 450px;" class="form-control" placeholder="create new password"/>
+          </div>
+
+          <div style="padding-bottom: 18px;">Questions / Comments<br />
+            <textarea id="data_10" false name="data_10" style="max-width : 450px;" rows="6"
+              class="form-control" placeholder=" text here"></textarea>
+          </div>
+
+          <div style="padding-bottom: 18px;"><input name="skip_Submit" value="Submit" type="submit" /></div>
+          <div>
+          </div>
+      </form>
+    </center>
+  </body>
+
+</html>

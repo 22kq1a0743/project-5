@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+
+<body background="C:\Users\91701\Downloads\img-5 (1).jpg"></body>
+<style>
+        .navbar {
+        background-color: none;
+        overflow: hidden;
+    }
+
+    .navbar a {
+        float: left;
+        display: block;
+        color: blue;
+        margin-left: 35px;
+        padding: 14px 16px;
+    }
+
+    .navbar a:hover {
+        background-color: wheat;
+        color: palevioletred;
+    }
+
+    form {
+        background-color: rgba(240, 248, 255, 0.269);
+        margin: 20%;
+        padding: 5%;
+        margin-left: 35%;
+        margin-right: 35%;
+        margin-top: auto;
+        border-radius: 10px;
+    }
+</style>
+<script>
+    function loginvalidation() {
+        var uname = document.myform.username.value;
+        var password = document.myform.password.value;
+        if (uname == null || uname == "") {
+            alert("Name can't be blank")
+            return false;
+        }
+        else if (password.length < 6) {
+            alert("password Must be used in special character")
+            return false;
+        }
+        return true;
+    }
+</script>
+</head>
+
+<body>
+    <h1>
+        <center><u>Login Page</u></center>
+    </h1>
+    <div class="navbar">
+        <h2>
+            <a href="home.html">Home</a>
+            <a href="Menu.html">Menu</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="Registration form.html">Registration</a>
+            <a href="about.html">About Us</a>
+            <a href="Service.html">Service</a>
+            <a href="login.html">Login </a>
+        </h2>
+    </div>
+
+    <form name="myform" action="home.html" onsubmit="return loginvalidation(this)">
+        <center>
+            <h2>Sign us!!</h2>
+        </center>
+        <p>User Name:<input type="text" name="username" placeholder="Enter your username" autofocus></p><br>
+        <p>Password:<input type="password" name="password" placeholder="Enter your password"></p><br>
+        <center><input type="submit" value="submit"></center>
+    </form>
+</body>
+
+</html>

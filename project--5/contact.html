@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant</title>
+
+<body background="C:\Users\91701\Downloads\img.png.png"></body>
+<style>
+    body h1 {
+        color: rgb(5, 125, 125);
+        font-size: 350%;
+    }
+
+    .navbar {
+        background-color: none;
+        overflow: hidden;
+    }
+
+    .navbar a {
+        float: left;
+        display: block;
+        color: blue;
+        margin-left: 35px;
+        padding: 14px 16px;
+    }
+
+    .navbar a:hover {
+        background-color: wheat;
+        color: palevioletred;
+    }
+
+    .contact {
+        background-color: rgba(123, 129, 130, 0.326);
+        margin: 20%;
+        padding: 2%;
+        margin-left: 35%;
+        margin-right: 35%;
+        margin-top: auto;
+        border-radius: 10px;
+    }
+</style>
+<script>
+    function validation() {
+        if (isEmpty(document.getElementById('data_4').value.trim())) {
+            alert('Phone is required!');
+            return false;
+        }
+        if (isEmpty(document.getElementById('data_5').value.trim())) {
+            alert('Email is required!');
+            return false;
+        }
+
+    }
+</script>
+</head>
+
+<body>
+    <form method="post" action="home.html" onSubmit="return validation();">
+        <center>
+            <h1> Customer Details</h1>
+        </center>
+        <div class="navbar">
+            <h2>
+                <a href="home.html">Home</a>
+                <a href="Menu.html">Menu</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="Registration form.html">Registration</a>
+                <a href="about.html">About Us</a>
+                <a href="Service.html">Service</a>
+                <a href="login.html">Login </a>
+            </h2>
+        </div>
+        <div class="contact">
+            <center>
+                <div style="padding-bottom: 18px;">Phone<span style="color: rgb(0, 0, 0);"> *</span><br />
+                    <input type="text" id="data_4" name="data_4" style="max-width : 450px;" class="form-control"
+                        placeholder="Ph.No" />
+                </div>
+                <div style="padding-bottom: 18px;">Email<span style="color: rgb(0, 0, 0);"> *</span><br />
+                    <input type="text" id="data_5" name="data_5" style="max-width : 450px;" class="form-control"
+                        placeholder="Email here" />
+                </div>
+                <div style="padding-bottom: 18px;"><input name="skip_Submit" value="Submit" type="submit" /></div>
+            </center>
+        </div>
+    </form>
+</body>
+
+</html>
